@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Accessible voice-controlled games for disabled users">
+    <title>Accessible Voice Controlled Games</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header role="banner">
+        <h1>Accessible Voice Controlled Games</h1>
+        <p>Control games completely by voice commands. Say "Help" at any time for assistance.</p>
+    </header>
+    
+    <main class="game-container" role="main">
+        <section class="controls" aria-labelledby="controlsHeading">
+            <h2 id="controlsHeading" class="sr-only">Game Controls</h2>
+            <div class="controls-row">
+                <button id="startVoice" aria-label="Start voice recognition">
+                    <span aria-hidden="true">🎤 Start Voice</span>
+                </button>
+                <button id="stopVoice" aria-label="Stop voice recognition">
+                    <span aria-hidden="true">⏹️ Stop Voice</span>
+                </button>
+            </div>
+            <div class="controls-row">
+                <button id="returnToMenu" style="display: none;" aria-label="Return to game selection menu">
+                    <span aria-hidden="true">🏠 Return to Menu</span>
+                </button>
+            </div>
+            <div class="status" id="voiceStatus" role="status" aria-live="polite">Voice recognition inactive</div>
+            <div class="emotion-display" id="emotionDisplay" role="region" aria-live="polite">Detected emotion: Neutral</div>
+        </section>
+        
+        <section class="game-selection" id="gameSelection" role="region" aria-label="Game selection">
+            <button class="game-card" id="snakeGame" role="button" aria-labelledby="snakeTitle">
+                <h2 id="snakeTitle">Snake</h2>
+                <p>Voice commands: "Play Snake", "Go Up/Down/Left/Right", "Pause"</p>
+            </button>
+            <button class="game-card" id="crossyGame" role="button" aria-labelledby="crossyTitle">
+                <h2 id="crossyTitle">Crossy Road</h2>
+                <p>Voice commands: "Play Crossy Road", "Go Forward/Left/Right"</p>
+            </button>
+            <button class="game-card" id="chessGame" role="button" aria-labelledby="chessTitle">
+                <h2 id="chessTitle">Chess</h2>
+                <p>Voice commands: "Play Chess", "Move [piece] to [position]"</p>
+            </button>
+        </section>
+        
+        <!-- Game commands sections remain same -->
+        
+        <canvas id="gameCanvas" width="600" height="400" aria-label="Game display area"></canvas>
+    </main>
+
+    <!-- Accessibility Notice -->
+    <div class="accessibility-notice" role="contentinfo">
+        <p>This website is designed for maximum accessibility. Features include:</p>
+        <ul>
+            <li>Full voice control</li>
+            <li>Screen reader compatibility</li>
+            <li>High contrast visuals</li>
+            <li>Keyboard navigation (Tab/Shift+Tab)</li>
+        </ul>
+    </div>
+
+    <script src="game.js"></script>
+    <script src="accessibility.js"></script>
+</body>
+</html>
