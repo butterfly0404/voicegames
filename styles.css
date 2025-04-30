@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Global Styles */
 * {
     margin: 0;
@@ -247,4 +248,72 @@ header h1 {
         width: 100%;
         height: auto;
     }
+=======
+/* Add to existing styles */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.accessibility-notice {
+    background: #004d40;
+    color: white;
+    padding: 1rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+.accessibility-notice ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.game-card:focus {
+    outline: 3px solid #ffeb3b;
+    transform: scale(1.05);
+}
+
+button:focus {
+    outline: 3px solid #ffeb3b;
+    box-shadow: 0 0 10px #ffeb3b;
+}
+
+/* Enhanced contrast */
+header {
+    background-color: #0056b3;
+}
+
+button {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.command {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Larger tap targets for mobile */
+button {
+    min-width: 200px;
+    padding: 1rem 2rem;
+}
+
+/* Animation for visual feedback */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.voice-active {
+    animation: pulse 2s infinite;
+>>>>>>> 837635e9c24ae639705547f69f82ee61601a1bbf
 }
