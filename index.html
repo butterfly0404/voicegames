@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice-Controlled AI Game Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Voice-Controlled Game Hub</h1>
+        <p class="subtitle">Play games with your voice! We'll adapt to your emotions</p>
+    </header>
+
+    <div class="container">
+        <!-- Game Selection Screen -->
+        <div class="game-selection" id="game-selection">
+            <div class="game-card" data-game="snake">
+                <div class="game-icon">🐍</div>
+                <h2 class="game-title">Snake Game</h2>
+                <p class="game-description">Control a hungry snake with voice commands as it grows longer with each apple eaten.</p>
+                <button class="play-btn">Play Now</button>
+            </div>
+
+            <div class="game-card" data-game="crossy">
+                <div class="game-icon">🚶</div>
+                <h2 class="game-title">Crossy Roads</h2>
+                <p class="game-description">Help your character cross busy roads and rivers using voice commands.</p>
+                <button class="play-btn">Play Now</button>
+            </div>
+
+            <div class="game-card" data-game="chess">
+                <div class="game-icon">♟️</div>
+                <h2 class="game-title">Chess</h2>
+                <p class="game-description">Play the classic game of chess using natural voice commands to move pieces.</p>
+                <button class="play-btn">Play Now</button>
+            </div>
+        </div>
+
+        <!-- Game Area -->
+        <div class="game-container" id="game-container">
+            <div class="game-header">
+                <button class="back-btn">← Back to Games</button>
+                <div class="game-info">
+                    <div class="game-score">Score: <span id="score">0</span></div>
+                    <div class="game-level">Level: <span id="level">1</span></div>
+                    <div class="game-emotion">Emotion: <span id="emotion">Neutral</span></div>
+                </div>
+            </div>
+
+            <canvas id="game-canvas" width="800" height="600"></canvas>
+
+            <div class="voice-ui">
+                <button class="mic-btn" id="mic-btn">🎤</button>
+                <div class="command-display" id="command-display">Say a command to play...</div>
+            </div>
+
+            <div class="instructions" id="game-instructions">
+                <h3>Voice Commands:</h3>
+                <div class="command-list" id="command-list">
+                    <!-- Commands will be populated based on the game -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="emotion-detection">
+            <p id="emotion-feedback">We'll adapt game difficulty based on your emotions</p>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
